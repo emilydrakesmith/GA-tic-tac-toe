@@ -11,11 +11,10 @@ const gameState = {
 /******* RENDER FUNCTIONS *******/
 
 function renderMain() {
-    const body = document.getElementById('body');
-    body.innerHTML = `<main id='main'>
-                        <section id='game-board'></section>
-                        <section id='outcome'></section>
-                      </main>`;
+    document.getElementById('body').innerHTML = `<main id='main'>
+                                                    <section id='game-board'></section>
+                                                    <section id='outcome'></section>
+                                                 </main>`;
 }
 
 function renderGameDivs() {
@@ -69,8 +68,6 @@ function checkWin() {
         [3, 5, 7]
     ];
 
-
-
     if (gameState.player1Turn === false) {
         for (let i=0; i<winConditions.length; i++) {
                 console.log(`redBoxes length: ${gameState.redBoxes.length}`)
@@ -100,18 +97,28 @@ function checkWin() {
 
 function declareWinner(color) {
     gameState.winner = true;
-    console.log(`${color} wins`)
+    console.log(`${color} wins`);
+    const messageBox = document.getElementById('outcome');
+    if (color === 'red') {
+        messageBox.innerHTML = `<h2>Red Player Wins!</h2>`;
+    } else if (color === 'green') {
+        messageBox.innerHTML = `<h2>Green Player Wins!</h2>`;
+    }
+    document.getElementById('body').setAttribute('style', 'pointer-events:none');
 }
 
 function declareStalemate() {
-    gameState.winner = true;
-    console.log(`stalemate`)
+    document.getElementById('outcome').innerHTML = `<h2>It's a stalemate!</h2>`;
+    console.log(`stalemate`);
+    document.getElementById('body').setAttribute('style', 'pointer-events:none');
+    
 }
 
 /******* INITIALIZE FUNCTION *******/
 
 function initialize() {
     renderMain();
-    renderGameDivs();}
+    renderGameDivs();
+}
 
 initialize();
