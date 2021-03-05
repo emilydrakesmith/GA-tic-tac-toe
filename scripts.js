@@ -2,8 +2,8 @@
 
 const gameState = {
     player1Turn: true,
-    redBoxes: [],
-    greenBoxes: [],
+    p1Boxes: [],
+    p2Boxes: [],
     totalTurns: 0,
     winner: false
 }
@@ -23,7 +23,8 @@ function renderGameDivs() {
         gameBoard.insertAdjacentHTML('beforeend', `<div class='game-box' 
                                                         id=${i+1}
                                                         onclick='handleClick(event)'>
-                                                   </div>`);
+                                                   </div>`
+                                    );
     }
 }
 
@@ -38,16 +39,16 @@ function handleClick(event) {
 
     if (gameState.player1Turn === true) {
         if (clickedBoxClasses === 'game-box') {
-            gameState.redBoxes.push(clickedBoxId);
-            console.log(gameState.redBoxes);
-            clickedBox.className += ' red-box';
+            gameState.p1Boxes.push(clickedBoxId);
+            console.log(gameState.p1Boxes);
+            clickedBox.className += ' p1-box';
             gameState.player1Turn = false;
         }
     } else if (gameState.player1Turn === false) {
         if (clickedBoxClasses === 'game-box') {
-            gameState.greenBoxes.push(clickedBoxId);
-            console.log(gameState.greenBoxes);
-            clickedBox.className += ' green-box';
+            gameState.p2Boxes.push(clickedBoxId);
+            console.log(gameState.p2Boxes);
+            clickedBox.className += ' p2-box';
             gameState.player1Turn = true;
         }
     }
@@ -70,22 +71,22 @@ function checkWin() {
 
     if (gameState.player1Turn === false) {
         for (let i=0; i<winConditions.length; i++) {
-                console.log(`redBoxes length: ${gameState.redBoxes.length}`)
-                if (gameState.redBoxes.length >= 3
-                    && gameState.redBoxes.includes(winConditions[i][0])
-                    && gameState.redBoxes.includes(winConditions[i][1])
-                    && gameState.redBoxes.includes(winConditions[i][2])) {
-                        declareWinner('red');
+                console.log(`p1Boxes length: ${gameState.p1Boxes.length}`)
+                if (gameState.p1Boxes.length >= 3
+                    && gameState.p1Boxes.includes(winConditions[i][0])
+                    && gameState.p1Boxes.includes(winConditions[i][1])
+                    && gameState.p1Boxes.includes(winConditions[i][2])) {
+                        declareWinner('p1');
                 }
             }
     } else if (gameState.player1Turn === true) {
         for (let i=0; i<winConditions.length; i++) {
-                console.log(`greenBoxes length: ${gameState.greenBoxes.length}`)
-                if (gameState.greenBoxes.length >= 3
-                    && gameState.greenBoxes.includes(winConditions[i][0])
-                    && gameState.greenBoxes.includes(winConditions[i][1])
-                    && gameState.greenBoxes.includes(winConditions[i][2])) {
-                        declareWinner('green');
+                console.log(`p2Boxes length: ${gameState.p2Boxes.length}`)
+                if (gameState.p2Boxes.length >= 3
+                    && gameState.p2Boxes.includes(winConditions[i][0])
+                    && gameState.p2Boxes.includes(winConditions[i][1])
+                    && gameState.p2Boxes.includes(winConditions[i][2])) {
+                        declareWinner('p2');
                 }
             }
         }
@@ -99,10 +100,10 @@ function declareWinner(color) {
     gameState.winner = true;
     console.log(`${color} wins`);
     const messageBox = document.getElementById('outcome');
-    if (color === 'red') {
-        messageBox.innerHTML = `<h2>Red Player Wins!</h2>`;
-    } else if (color === 'green') {
-        messageBox.innerHTML = `<h2>Green Player Wins!</h2>`;
+    if (color === 'p1') {
+        messageBox.innerHTML = `<h2>Player 1 Wins!</h2>`;
+    } else if (color === 'p2') {
+        messageBox.innerHTML = `<h2>Player 2 Wins!</h2>`;
     }
     document.getElementById('body').setAttribute('style', 'pointer-events:none');
 }
