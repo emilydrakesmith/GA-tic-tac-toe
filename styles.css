@@ -1,0 +1,49 @@
+html {
+    box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before,  /* All ::before pseudo-elements */
+*::after {  /* All ::after pseudo-elements */
+            /* height & width will now include border & padding by default but can be over-ridden as needed */
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: gray;
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width:700px;
+    height:700px;
+    border: 3px solid yellow;
+}
+
+#game-board {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#outcome {
+    border: 3px solid purple;
+}
+
+.game-box {
+    width: 200px;
+    height:200px;
+    border: 3px solid blue;
+}
+
+.red-box {
+    background-color: red;
+}
+
+.green-box {
+    background-color: green;
+}
