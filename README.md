@@ -30,10 +30,15 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * macOS Big Sur version 11.2.1, Apple M1 chip
 
 **This app is hosted at:**
-* [GitHub Repo]()
-* [GitHub Hosted Site]()
+* [GitHub Repo](https://github.com/mhsmith321/GA-tic-tac-toe)
+* [GitHub Hosted Site](https://mhsmith321.github.io/GA-tic-tac-toe/)
 
 # Future Plans
+
+* *Important!* Before using CSS `:hover` to highlight squares which are available for selection I tried using event handlers `onmouseover` and on `mouseout`.  It was a nightmare.  *Do not* attempt to refactor in this way unless the refactor also involves implementing jQuery which handles these events more easily.
+* Continue building out the `README.md`.
+* Add `<header>` and `<footer>` elements.
+* Render highlighting for the winning cells in 
 
 # Contribute
 
@@ -45,6 +50,8 @@ If you'd like to learn more about the developer, please visit [my website](https
 
 # Special Thanks
 
-* The `X` and `O` characters use the [Comic Neue](http://comicneue.com/) font which I found with [Google Fonts](https://fonts.google.com/).  It was designed by [Craig Rozynski](https://github.com/crozynski/). 
+* Instructors and peers from the General Assembly SEIR-EC-2-22 cohort for collaboration in developing this app. While this app represents my own original work we gave each other assistance in developing our own versions thereof.
+* The `X` and `O` characters use the [Comic Neue](http://comicneue.com/) font which I found with [Google Fonts](https://fonts.google.com/).  It was designed by [Craig Rozynski](https://github.com/crozynski/) and made available under the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL). 
+* The text box uses the [RocknRoll One](https://github.com/fontworks-fonts/RocknRoll) font which I found with [Google Fonts](https://fonts.google.com/).  It was designed by [Fontworks, Inc](https://github.com/fontworks-fonts) and made available under the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 
 # Appendices

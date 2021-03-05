@@ -13,7 +13,7 @@ const gameState = {
 function renderMain() {
     document.getElementById('body').innerHTML = `<main id='main'>
                                                     <section id='game-board'></section>
-                                                    <section id='outcome'></section>
+                                                    <section id='outcome'>Player X Goes First!<br>Click a square!</section>
                                                  </main>`;
 }
 
@@ -43,6 +43,7 @@ function handleClick(event) {
             console.log(gameState.p1Boxes);
             clickedBox.className += ' p1-box';
             clickedBox.innerHTML = 'X';
+            document.getElementById('outcome').innerHTML = 'Player O Goes!';
             gameState.player1Turn = false;
         }
     } else if (gameState.player1Turn === false) {
@@ -51,6 +52,7 @@ function handleClick(event) {
             console.log(gameState.p2Boxes);
             clickedBox.className += ' p2-box';
             clickedBox.innerHTML = 'O';
+            document.getElementById('outcome').innerHTML = 'Player X Goes!';
             gameState.player1Turn = true;
         }
     }

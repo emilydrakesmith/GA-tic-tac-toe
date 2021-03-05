@@ -15,13 +15,13 @@ body {
     margin: 0;
     background-color: #343a40;
     font-family: sans-serif;
+    padding: 20px;
 }
 
 main {
     display: flex;
     flex-direction: column;
     width:700px;
-    border: 3px solid yellow;
 }
 
 #game-board {
@@ -37,8 +37,15 @@ main {
 }
 
 #outcome {
-    border: 3px solid purple;
-    height: 50px;
+    margin: 30px;
+    border-radius: 10px;
+    background-color: #ced4da;
+    height: 150px;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .game-box {
@@ -50,43 +57,15 @@ main {
     font-family: 'Comic Neue', cursive;
     font-size: 125px;
     width: 215px;
-    height:215px;
+    height: 215px;
     border-radius: 10%;
     background-color: #ced4da;
 }
 
 .game-box:hover {
-    background-color: teal;
+    background-color: orange;
 }
 
 .p1-box, .p2-box {
     background-color: #ced4da !important;
 }
-
-/*
-.game-board
-{
-	width: 600px;
-	height: 600px;
-	margin: 0 auto;
-  background-color: #34495e;
-  color: #fff;
-  border: 6px solid #2c3e50;
-  border-radius: 10px;
-	
-	display: grid;
-	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-}
-
-.box
-{
-  border: 6px solid #2c3e50;
-  border-radius: 2px;
-  font-family: Helvetica;
-  font-weight: bold;
-  font-size: 4em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-*/
