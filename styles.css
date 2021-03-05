@@ -55,12 +55,12 @@ main {
     background-color: #ced4da;
 }
 
-.p1-box {
-    background-color: red;
+.game-box:hover {
+    background-color: teal;
 }
 
-.p2-box {
-    background-color: green;
+.p1-box, .p2-box {
+    background-color: #ced4da !important;
 }
 
 /*

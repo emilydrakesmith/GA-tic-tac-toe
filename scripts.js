@@ -22,7 +22,7 @@ function renderGameDivs() {
     for (let i=0; i<9; i++) {
         gameBoard.insertAdjacentHTML('beforeend', `<div class='game-box' 
                                                         id=${i+1}
-                                                        onclick='handleClick(event)'>
+                                                        onclick='handleClick(event)'
                                                    </div>`
                                     );
     }
@@ -103,9 +103,9 @@ function declareWinner(color) {
     console.log(`${color} wins`);
     const messageBox = document.getElementById('outcome');
     if (color === 'p1') {
-        messageBox.innerHTML = `<h2>Player 1 Wins!</h2>`;
+        messageBox.innerHTML = `<h2>X Wins!</h2>`;
     } else if (color === 'p2') {
-        messageBox.innerHTML = `<h2>Player 2 Wins!</h2>`;
+        messageBox.innerHTML = `<h2>O Wins!</h2>`;
     }
     document.getElementById('body').setAttribute('style', 'pointer-events:none');
 }
