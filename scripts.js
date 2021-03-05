@@ -42,6 +42,7 @@ function handleClick(event) {
             gameState.p1Boxes.push(clickedBoxId);
             console.log(gameState.p1Boxes);
             clickedBox.className += ' p1-box';
+            clickedBox.innerHTML = 'X';
             gameState.player1Turn = false;
         }
     } else if (gameState.player1Turn === false) {
@@ -49,6 +50,7 @@ function handleClick(event) {
             gameState.p2Boxes.push(clickedBoxId);
             console.log(gameState.p2Boxes);
             clickedBox.className += ' p2-box';
+            clickedBox.innerHTML = 'O';
             gameState.player1Turn = true;
         }
     }
@@ -112,7 +114,6 @@ function declareStalemate() {
     document.getElementById('outcome').innerHTML = `<h2>It's a stalemate!</h2>`;
     console.log(`stalemate`);
     document.getElementById('body').setAttribute('style', 'pointer-events:none');
-    
 }
 
 /******* INITIALIZE FUNCTION *******/

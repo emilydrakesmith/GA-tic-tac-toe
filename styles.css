@@ -13,7 +13,7 @@ html {
 body {
     min-height: 100vh;
     margin: 0;
-    background-color: gray;
+    background-color: #343a40;
     font-family: sans-serif;
 }
 
@@ -21,24 +21,38 @@ main {
     display: flex;
     flex-direction: column;
     width:700px;
-    height:700px;
     border: 3px solid yellow;
 }
 
 #game-board {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        'grid-box-1 | grid-box-2 | grid-box-3'
+        'grid-box-4 | grid-box-5 | grid-box-6'
+        'grid-box-7 | grid-box-8 | grid-box-9';
+    gap: 5px;
+    min-height: 700px;
 }
 
 #outcome {
     border: 3px solid purple;
+    height: 50px;
 }
 
 .game-box {
-    width: 200px;
-    height:200px;
-    border: 3px solid blue;
-    background-color: grey;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Neue', cursive;
+    font-size: 125px;
+    width: 215px;
+    height:215px;
+    border-radius: 10%;
+    background-color: #ced4da;
 }
 
 .p1-box {

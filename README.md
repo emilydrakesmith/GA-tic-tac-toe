@@ -45,4 +45,6 @@ If you'd like to learn more about the developer, please visit [my website](https
 
 # Special Thanks
 
+* The `X` and `O` characters use the [Comic Neue](http://comicneue.com/) font which I found with [Google Fonts](https://fonts.google.com/).  It was designed by [Craig Rozynski](https://github.com/crozynski/). 
+
 # Appendices
