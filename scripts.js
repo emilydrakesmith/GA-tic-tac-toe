@@ -24,7 +24,7 @@ function renderMain() {
                                                 <footer id='footer'>
                                                     <div>© Marty Smith 2021</div>
                                                     <div>
-                                                        <a href='https://github.com/mhsmith321/GA-project-2-job-hound' target='_blank' class='footer-link'>GitHub Repo</a>  •
+                                                        <a href='https://github.com/mhsmith321/GA-tic-tac-toe' target='_blank' class='footer-link'>GitHub Repo</a>  •
                                                         <a href='https://martysmith.tech/' target='_blank' class='footer-link'>Developer Webpage</a>
                                                     </div>
                                                 </footer>`;

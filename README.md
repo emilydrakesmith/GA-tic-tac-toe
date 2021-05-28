@@ -61,7 +61,7 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 #### v 1.0.0 | 05 March 2021 | commit db0cf09e4f3e909e9d227bd55e46dbf82f169023
 * Added a textbox that shows instructions and declares a winner or stalemate when appropriate.
 
-#### v 1.1.0 | 28 May 2021 | commit TBD | Current Version
+#### v 1.1.0 | 28 May 2021 | commit 08e76675a730a418c2dd28f105fe98c2b0e4da1f
 * Cleaned out unnecessary `console.log()` statements from `index.html` left over from testing.
 * Centered game horizontally and vertically in the browser.
 * Added `<header>` and `<footer>` sections.
@@ -69,6 +69,9 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * Built a button to restart the game.
 * Refactored `function declareWinner()` to use a ternary rather than an `if/else` statement.
 * Fully built-out `README.md` file.
+
+#### v 1.1.1 | 28 May 2021 | commit TBD | Current Version
+* Fixed a hyperlink in `<footer>` which previously redirected to the wrong GitHub repository.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
