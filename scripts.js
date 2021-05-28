@@ -11,19 +11,32 @@ const gameState = {
 /******* RENDER FUNCTIONS *******/
 
 function renderMain() {
-    document.getElementById('body').innerHTML = `<main id='main'>
+    document.getElementById('body').innerHTML = `<header>
+                                                    <h1>Tic Tac Toe!</h1>
+                                                </header>
+                                                <main id='main'>
                                                     <section id='game-board'></section>
                                                     <section id='outcome'>Player X Goes First!<br>Click a square!</section>
-                                                 </main>`;
+                                                    <section id='restart-box' onclick='resetGame()'>
+                                                        <h2>Click to Restart</h2>
+                                                    </section>
+                                                </main>
+                                                <footer id='footer'>
+                                                    <div>© Marty Smith 2021</div>
+                                                    <div>
+                                                        <a href='https://github.com/mhsmith321/GA-project-2-job-hound' target='_blank' class='footer-link'>GitHub Repo</a>  •
+                                                        <a href='https://martysmith.tech/' target='_blank' class='footer-link'>Developer Webpage</a>
+                                                    </div>
+                                                </footer>`;
 }
 
 function renderGameDivs() {
     const gameBoard = document.getElementById('game-board');
     for (let i=0; i<9; i++) {
-        gameBoard.insertAdjacentHTML('beforeend', `<div class='game-box' 
+        gameBoard.insertAdjacentHTML('beforeend',  `<div class='game-box' 
                                                         id=${i+1}
                                                         onclick='handleClick(event)'
-                                                   </div>`
+                                                    </div>`
                                     );
     }
 }
@@ -35,12 +48,9 @@ function handleClick(event) {
     const clickedBox = event.currentTarget;
     const clickedBoxClasses = clickedBox.getAttribute('class');
     const clickedBoxId = parseInt(clickedBox.getAttribute('id'));
-    console.log(clickedBoxId)
-
     if (gameState.player1Turn === true) {
         if (clickedBoxClasses === 'game-box') {
             gameState.p1Boxes.push(clickedBoxId);
-            console.log(gameState.p1Boxes);
             clickedBox.className += ' p1-box';
             clickedBox.innerHTML = 'X';
             document.getElementById('outcome').innerHTML = 'Player O Goes!';
@@ -49,7 +59,6 @@ function handleClick(event) {
     } else if (gameState.player1Turn === false) {
         if (clickedBoxClasses === 'game-box') {
             gameState.p2Boxes.push(clickedBoxId);
-            console.log(gameState.p2Boxes);
             clickedBox.className += ' p2-box';
             clickedBox.innerHTML = 'O';
             document.getElementById('outcome').innerHTML = 'Player X Goes!';
@@ -75,7 +84,6 @@ function checkWin() {
 
     if (gameState.player1Turn === false) {
         for (let i=0; i<winConditions.length; i++) {
-                console.log(`p1Boxes length: ${gameState.p1Boxes.length}`)
                 if (gameState.p1Boxes.length >= 3
                     && gameState.p1Boxes.includes(winConditions[i][0])
                     && gameState.p1Boxes.includes(winConditions[i][1])
@@ -85,7 +93,6 @@ function checkWin() {
             }
     } else if (gameState.player1Turn === true) {
         for (let i=0; i<winConditions.length; i++) {
-                console.log(`p2Boxes length: ${gameState.p2Boxes.length}`)
                 if (gameState.p2Boxes.length >= 3
                     && gameState.p2Boxes.includes(winConditions[i][0])
                     && gameState.p2Boxes.includes(winConditions[i][1])
@@ -102,20 +109,25 @@ function checkWin() {
 
 function declareWinner(color) {
     gameState.winner = true;
-    console.log(`${color} wins`);
     const messageBox = document.getElementById('outcome');
-    if (color === 'p1') {
-        messageBox.innerHTML = `<h2>X Wins!</h2>`;
-    } else if (color === 'p2') {
-        messageBox.innerHTML = `<h2>O Wins!</h2>`;
-    }
-    document.getElementById('body').setAttribute('style', 'pointer-events:none');
+    const p1WinOutput = `<h2 class='outcome-text'>X Wins!</h2>`;
+    const p2WinOutput = `<h2 class='outcome-text'>O Wins!</h2>`;
+    messageBox.innerHTML = (color === 'p1') ? p1WinOutput : p2WinOutput;
+    document.getElementsByClassName('game-box').setAttribute('style', 'pointer-events:none');
 }
 
 function declareStalemate() {
-    document.getElementById('outcome').innerHTML = `<h2>It's a stalemate!</h2>`;
-    console.log(`stalemate`);
+    document.getElementById('outcome').innerHTML = `<h2 class='outcome-text'>It's a stalemate!</h2>`;
     document.getElementById('body').setAttribute('style', 'pointer-events:none');
+}
+
+function resetGame() {
+    gameState.player1Turn = true;
+    gameState.p1Boxes = [];
+    gameState.p2Boxes = [];
+    gameState.totalTurns = 0;
+    gameState.winner = false;
+    initialize();
 }
 
 /******* INITIALIZE FUNCTION *******/

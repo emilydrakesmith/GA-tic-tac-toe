@@ -1,5 +1,5 @@
 html {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 /* The Universal Selector */
@@ -10,18 +10,46 @@ html {
     box-sizing: inherit;
 }
 
+/* Pseudo-classes for hyperlink colors */
+a:link    {color: #a3a3a3;}    /* custom color for un-clicked links */
+a:visited {color: #a3a3a3;}    /* custom color for clicked links */
+a:hover   {color: #e6e6e6;}    /* custom color for links when hovered over */
+a:active  {color: #e6e6e6;}    /* custom color for links being actively clicked */
+
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
     margin: 0;
     background-color: #343a40;
     font-family: sans-serif;
-    padding: 20px;
+}
+
+header {
+    margin-top: -20px;
+    margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 8px;
+    color: #C0C0C0;
+}
+
+h1 {
+    font-size: 60px;
+    font-family: 'RocknRoll One', sans-serif;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    width:700px;
+    text-align: center;
+    width: 500px;
 }
 
 #game-board {
@@ -33,19 +61,40 @@ main {
         'grid-box-4 | grid-box-5 | grid-box-6'
         'grid-box-7 | grid-box-8 | grid-box-9';
     gap: 5px;
-    min-height: 700px;
+    min-height: 500px;
 }
 
 #outcome {
     margin: 30px;
     border-radius: 10px;
     background-color: #ced4da;
-    height: 150px;
+    height: 100px;
     font-family: 'RocknRoll One', sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#restart-box {
+    display: flex;
+    align-self:center;
+    align-items: center;
+    justify-content: center;
+    color: #C0C0C0;
+    border: 3px solid #C0C0C0;
+    border-radius: 14px;
+    height: 60px;
+    width: 225px;
+}
+
+h2 {
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 22px;
+}
+
+.outcome-text {
+    font-size: 35px;
 }
 
 .game-box {
@@ -56,8 +105,8 @@ main {
     align-items: center;
     font-family: 'Comic Neue', cursive;
     font-size: 125px;
-    width: 215px;
-    height: 215px;
+    width: 150px;
+    height: 150px;
     border-radius: 10%;
     background-color: #ced4da;
 }
@@ -68,4 +117,28 @@ main {
 
 .p1-box, .p2-box {
     background-color: #ced4da !important;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding-top: 5px;
+    height: 60px;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #C0C0C0;
+}
+
+/* breakpoint to resize footer for smaller screens */
+@media only screen and (max-width: 500px) {
+    footer {
+        height: 55px;
+        font-size: 14px;
+    }
+
+    .footer-link {
+        font-size: 12px;
+    }
 }
