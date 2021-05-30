@@ -11,33 +11,32 @@ const gameState = {
 /******* RENDER FUNCTIONS *******/
 
 function renderMain() {
-    document.getElementById('body').innerHTML = `<header>
-                                                    <h1>Tic Tac Toe!</h1>
-                                                </header>
-                                                <main id='main'>
-                                                    <section id='game-board'></section>
-                                                    <section id='outcome'>Player X Goes First!<br>Click a square!</section>
-                                                    <section id='restart-box' onclick='resetGame()'>
-                                                        <h2>Click to Restart</h2>
-                                                    </section>
-                                                </main>
-                                                <footer id='footer'>
-                                                    <div>© Marty Smith 2021</div>
-                                                    <div>
-                                                        <a href='https://github.com/mhsmith321/GA-tic-tac-toe' target='_blank' class='footer-link'>GitHub Repo</a>  •
-                                                        <a href='https://martysmith.tech/' target='_blank' class='footer-link'>Developer Webpage</a>
-                                                    </div>
-                                                </footer>`;
+    const docBody = document.getElementById('body');
+    const htmlTemplate =   `<header>
+                                <h1>Tic Tac Toe!</h1>
+                            </header>
+                            <main id='main'>
+                                <section id='game-board'></section>
+                                <section id='outcome'>Player X Goes First!<br>Click a square!</section>
+                                <section id='restart-box' onclick='resetGame()'>
+                                    <h2>Click to Restart</h2>
+                                </section>
+                            </main>
+                            <footer id='footer'>
+                                <div>© Marty Smith 2021</div>
+                                <div>
+                                    <a href='https://github.com/mhsmith321/GA-tic-tac-toe' target='_blank' class='footer-link'>GitHub Repo</a>  •
+                                    <a href='https://martysmith.tech/' target='_blank' class='footer-link'>Developer Webpage</a>
+                                </div>
+                            </footer>`;
+    docBody.innerHTML = htmlTemplate;
 }
 
 function renderGameDivs() {
     const gameBoard = document.getElementById('game-board');
     for (let i=0; i<9; i++) {
-        gameBoard.insertAdjacentHTML('beforeend',  `<div class='game-box' 
-                                                        id=${i+1}
-                                                        onclick='handleClick(event)'
-                                                    </div>`
-                                    );
+        const gameBoxTemplate = `<div class='game-box' id=${i+1} onclick='handleClick(event)'</div>`;
+        gameBoard.insertAdjacentHTML('beforeend', gameBoxTemplate);
     }
 }
 
@@ -113,12 +112,12 @@ function declareWinner(color) {
     const p1WinOutput = `<h2 class='outcome-text'>X Wins!</h2>`;
     const p2WinOutput = `<h2 class='outcome-text'>O Wins!</h2>`;
     messageBox.innerHTML = (color === 'p1') ? p1WinOutput : p2WinOutput;
-    document.getElementsByClassName('game-box').setAttribute('style', 'pointer-events:none');
+    document.getElementById('game-board').setAttribute('style', 'pointer-events:none');
 }
 
 function declareStalemate() {
     document.getElementById('outcome').innerHTML = `<h2 class='outcome-text'>It's a stalemate!</h2>`;
-    document.getElementById('body').setAttribute('style', 'pointer-events:none');
+    document.getElementById('game-board').setAttribute('style', 'pointer-events:none');
 }
 
 function resetGame() {

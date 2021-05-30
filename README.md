@@ -2,7 +2,7 @@
 
 # Introduction
 
-This app is classic representation of the game Tic-Tac-Toe, created as a deliverable for the Software Engineering Immersive program with General Assembly.  Click [here](https://mhsmith321.github.io/GA-tic-tac-toe/) to play right now!
+This app is an example of the classic game Tic-Tac-Toe, created as a deliverable for the Software Engineering Immersive program with General Assembly.  Click [here](https://mhsmith321.github.io/GA-tic-tac-toe/) to play right now!
 
 # Table of Contents
 
@@ -32,7 +32,7 @@ At any point during or after play, players may click the marked reset box to sta
 
 # Version Notes
 
-The version **1.1.0** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The version **1.1.1** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
 * Z: increases in this number represent changes that are relatively minor but still warrant a new commit
@@ -70,8 +70,12 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * Refactored `function declareWinner()` to use a ternary rather than an `if/else` statement.
 * Fully built-out `README.md` file.
 
-#### v 1.1.1 | 28 May 2021 | commit TBD | Current Version
+#### v 1.1.1 | 28 May 2021 | commit 929fc50d1b4bce263b497d84c4710156bc7b7ba8
 * Fixed a hyperlink in `<footer>` which previously redirected to the wrong GitHub repository.
+
+#### v 1.1.1 | 30 May 2021 | commit TBD | Current Version
+* Fixed a bug where the game remains interactable after declaring a winner.
+* Refactored `function renderGame()` and `function renderGameDivs()` to de-spaghettify.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -79,7 +83,7 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 # Tech Framework
 
 **This app uses:**
-* HTML5 and CSS
+* HTML5 and CSS3
 * JavaScript ES6
 
 **I built this app with:**
