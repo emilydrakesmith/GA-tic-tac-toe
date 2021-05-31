@@ -40,37 +40,40 @@ function renderGameDivs() {
     }
 }
 
-/******* EVENT LISTENER *******/
+/******* EVENT LISTENERS *******/
 
 function handleClick(event) {
-    gameState.totalTurns += 1;
     const clickedBox = event.currentTarget;
-    const clickedBoxClasses = clickedBox.getAttribute('class');
     const clickedBoxId = parseInt(clickedBox.getAttribute('id'));
-    let playerToCheck = '';
-    if (gameState.player1Turn === true) {
-        if (clickedBoxClasses === 'game-box') {
-            gameState.p1Boxes.push(clickedBoxId);
-            clickedBox.className += ' p1-box';
-            clickedBox.innerHTML = 'X';
-            playerToCheck = 'p1';
-            document.getElementById('outcome').innerHTML = 'Player O Goes!';
-            gameState.player1Turn = false;
-        }
-    } else if (gameState.player1Turn === false) {
-        if (clickedBoxClasses === 'game-box') {
-            gameState.p2Boxes.push(clickedBoxId);
-            clickedBox.className += ' p2-box';
-            clickedBox.innerHTML = 'O';
-            playerToCheck = 'p2';
-            document.getElementById('outcome').innerHTML = 'Player X Goes!';
-            gameState.player1Turn = true;
-        }
-    }
-    checkEndGame(playerToCheck);
+    const currentPlayer = gameState.player1Turn === true ? 'player1' : 'player2';
+    const outcomeBox = document.getElementById('outcome');
+    processTurn(currentPlayer, clickedBox, clickedBoxId, outcomeBox);
+    checkEndGame(currentPlayer);
 }
 
 /******* STRUCTURAL FUNCTION *******/
+
+function processTurn(player, clickedBox, clickedBoxId, outcomeBox) {
+    gameState.totalTurns += 1;
+    if (player === 'player1') processPlayerOneMove(clickedBox, clickedBoxId, outcomeBox);
+    if (player === 'player2') processPlayerTwoMove(clickedBox, clickedBoxId, outcomeBox);
+}
+
+function processPlayerOneMove(box, boxId, resultsBox) {
+    box.innerHTML = 'X';
+    box.className += ' p1-box';
+    gameState.p1Boxes.push(boxId);
+    resultsBox.innerHTML = 'Player O Goes!';
+    gameState.player1Turn = false;
+}
+
+function processPlayerTwoMove(box, boxId, resultsBox) {
+    box.innerHTML = 'O';
+    box.className += ' p2-box';
+    gameState.p2Boxes.push(boxId);
+    resultsBox.innerHTML = 'Player X Goes!';
+    gameState.player1Turn = true;
+}
 
 function checkEndGame(currentPlayer) {
     if (gameState.totalTurns >= 5) checkForWin(currentPlayer);
@@ -89,7 +92,7 @@ function checkForWin(player) {
         [3, 5, 7]
     ];
     
-    const playerBoxes = player === 'p1' ? gameState.p1Boxes : gameState.p2Boxes;
+    const playerBoxes = player === 'player1' ? gameState.p1Boxes : gameState.p2Boxes;
     
     winConditions.forEach(winCondition => {
         if (playerBoxes.includes(winCondition[0])
@@ -105,7 +108,7 @@ function declareWinner(player) {
     const messageBox = document.getElementById('outcome');
     const p1WinOutput = `<h2 class='outcome-text'>X Wins!</h2>`;
     const p2WinOutput = `<h2 class='outcome-text'>O Wins!</h2>`;
-    messageBox.innerHTML = (player === 'p1') ? p1WinOutput : p2WinOutput;
+    messageBox.innerHTML = (player === 'player1') ? p1WinOutput : p2WinOutput;
     document.getElementById('game-board').setAttribute('style', 'pointer-events:none');
 }
 

@@ -1,0 +1,46 @@
+{
+    "name": "Tic Tac Toe",
+    "manifest_version": 2,
+    "version": "1.1.4",
+
+    "author": "Marty Smith",
+    "categories": ["entertainment", "games", "kids"],
+    "description": "A browser-rendered Tic Tac Toe game!",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "/images/favicons/favicon.ico",
+            "sizes": "64x64 24x24",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/images/favicons/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "images/favicons/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ],
+    "lang": "en",
+    "orientation": "portrait-primary",
+    "screenshots": [
+        {
+            "src": "/images/readme-images/game-initialized.png",
+            "sizes": "550x913",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/readme-images/game-win.png",
+            "sizes": "524x914",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/readme-images/game-stalemate.png",
+            "sizes": "513x819",
+            "type": "image/png"
+        }
+    ]
+}

@@ -9,10 +9,11 @@ This app is an example of the classic game Tic-Tac-Toe, created as a deliverable
 1. [Instructions for Use](#instructions)
 2. [Version Notes](#version-notes)
 3. [Tech Framework](#tech-framework)
-4. [Future Plans](#future-plans)
-5. [Contribute](#contribute)
-6. [Special Thanks](#special-thanks)
-7. [Appendices](#appendices)
+4. [Manifest.json](#manifest)
+5. [Future Plans](#future-plans)
+6. [Contribute](#contribute)
+7. [Special Thanks](#special-thanks)
+8. [Appendices](#appendices)
    1. [Appendix A: Unit 1 Project Assignment from General Assembly](#appendix-a-assignment)
    2. [Appendix B: Product Screenshots & Images](#appendix-b-pictures)
 
@@ -32,7 +33,7 @@ At any point during or after play, players may click the marked reset box to sta
 
 # Version Notes
 
-The version **1.1.3** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The version **1.1.4** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
 * Z: increases in this number represent changes that are relatively minor but still warrant a new commit
@@ -77,12 +78,19 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * Fixed a bug where the game remains interactable after declaring a winner.
 * Refactored `function renderGame()` and `function renderGameDivs()` to de-spaghettify.
 
-#### v 1.1.3 | 30 May 2021 | commit TBD | Current Version
-* Fixed versioning error in `README.med` on previous commit.
+#### v 1.1.3 | 30 May 2021 | commit 7e5e87f97f419f8d03e3e4ff054f9dc392780d99
+* Fixed versioning error in `README.md` on previous commit.
 * Renamed `function checkWin()` to to `function checkEndGame()`.
 * Refactored `function checkEndGame()` to use `.forEach` HOF instead of for-loops.
 * Refactored `function checkEndGame()` and `function checkForWinner()` to remove `if/else` trees.  Now the function can be called on either player in its native state.  Previously half the code wouldn't run.
 * Refactored argument `color` as `player` in `function declareWinner()`;
+
+#### v 1.1.4 | 30 May 2021 | commit TBD | Current Version
+* Universal refactor of value `'p1'` to `'player'1` and `'p2'` to `'player2'`.
+* Refactor `function handleClick()` to remove spaghetti.  Now it launches a series of functions to process a player move and evaluate if endgame has been reached.
+* Moved images for `README.md` from `/images` directory to `/images/readme-images`.  Updated image filepaths in `README.md` accordingly.
+* Added `manifest.json` to store metadata and link in `<head>` of `index.html` file.
+* Created and added a favicon.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -106,11 +114,29 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * [GitHub Hosted Site](https://mhsmith321.github.io/GA-tic-tac-toe/)
 
 [Back to Top](#top)
+<a id='manifest'></a>
+
+# Manifest.json
+
+Manifest.json is a new technology, still experimental at the time of me writing this, and was developed per [MDN guidelines](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json).  This file isn't wholly necessary for the function of this app but is important for future-proofing and good practice.
+
+Here are some notes about this file:
+* The keys `"name"`, `"manifest-version"`, and `"version"` are mandatory.  All others are optional and included as I see them relevant tot his app.
+* The key `"manifest-version"` must always be set to `2`.
+* The `"version"` key will be updated at any time I push a new version of this app.  All other keys will likely never change.
+* I'm unlikely to add more keys unless I develop this app to exist outside of a GitHub hosted site or more keys are published for use.
+* All keys must be entered as a string.
+* Double-quotes only; single-quotes will not be recognized.
+* As far as I am aware there is no way to insert inline notes.
+* Favicons still need to be linked in the `<head>` of `<index.html>` although the manifest lists them with correct locations.  Listing them in the manifest is a future-proofing measure.
+
+[Back to Top](#top)
 <a id='future-plans'></a>
 
 # Future Plans
 
 * *Important!* Before using CSS `:hover` to highlight squares which are available for selection I tried using event handlers `onmouseover` and on `mouseout`.  It was a nightmare.  *Do not* attempt to refactor in this way unless the refactor also involves implementing jQuery which handles these events more easily.
+* Fix bug that the `<header>` is superimposed over `<main>` in smaller browsers.
 * Refactor game squares and restart button as `<button>` elements.  This will improve accessibility.
 * Refactor the logic in `function checkWin()` to us a switch statement instead of the `if` tree.
 * Work on better separation of concerns in `scripts.js` file.
@@ -138,6 +164,7 @@ If you'd like to learn more about the developer, please visit [my website](https
 * Instructors and peers from the General Assembly SEIR-EC-2-22 cohort for collaboration in developing this app. While this app represents my own original work we gave each other assistance in developing our own versions thereof.
 * The `X` and `O` characters use the [Comic Neue](http://comicneue.com/) font which I found with [Google Fonts](https://fonts.google.com/).  It was designed by [Craig Rozynski](https://github.com/crozynski/) and made available under the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL). 
 * The text box uses the [RocknRoll One](https://github.com/fontworks-fonts/RocknRoll) font which I found with [Google Fonts](https://fonts.google.com/).  It was designed by [Fontworks, Inc](https://github.com/fontworks-fonts) and made available under the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+* Creating a favicon was easy using [favicon.io](https://favicon.io/), a free resource created by [John Sorrentino](https://twitter.com/johnsorrentino).
 
 [Back to Top](#top)
 <a id='appendices'></a>
@@ -265,12 +292,12 @@ Using a numbered outline is not required but helps organize the more complex ste
 ## Appendix B: Product Screenshots & Images
 
 ### Game Start Screen
-![Tic Tac Toe as it appears on initialization](images/game-initialized.png)
+![Tic Tac Toe as it appears on initialization](images/readme-images/game-initialized.png)
 
 ### Game on Player Win
-![Tic Tac Toe when a player has won](images/game-win.png)
+![Tic Tac Toe when a player has won](images/readme-images//game-win.png)
 
 ### Game on Stalemate
-![Tic Tac Toe on a stalemate](images/game-stalemate.png)
+![Tic Tac Toe on a stalemate](images/readme-images//game-stalemate.png)
 
 [Back to Top](#top)
