@@ -12,7 +12,7 @@ const gameState = {
 
 function renderMain() {
     const docBody = document.getElementById('body');
-    const htmlTemplate =   `<header>
+    const bodyTemplate =   `<header>
                                 <h1>Tic Tac Toe!</h1>
                             </header>
                             <main id='main'>
@@ -29,13 +29,13 @@ function renderMain() {
                                     <a href='https://martysmith.tech/' target='_blank' class='footer-link'>Developer Webpage</a>
                                 </div>
                             </footer>`;
-    docBody.innerHTML = htmlTemplate;
+    docBody.innerHTML = bodyTemplate;
 }
 
 function renderGameDivs() {
     const gameBoard = document.getElementById('game-board');
     for (let i=0; i<9; i++) {
-        const gameBoxTemplate = `<div class='game-box' id=${i+1} onclick='handleClick(event)'</div>`;
+        const gameBoxTemplate = `<div class='game-box' id=${i+1} onclick='handleClick(event)'></div>`;
         gameBoard.insertAdjacentHTML('beforeend', gameBoxTemplate);
     }
 }

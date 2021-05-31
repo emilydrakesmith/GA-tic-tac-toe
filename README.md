@@ -85,12 +85,15 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * Refactored `function checkEndGame()` and `function checkForWinner()` to remove `if/else` trees.  Now the function can be called on either player in its native state.  Previously half the code wouldn't run.
 * Refactored argument `color` as `player` in `function declareWinner()`;
 
-#### v 1.1.4 | 30 May 2021 | commit TBD | Current Version
+#### v 1.1.4 | 30 May 2021 | commit 309198d3c5ba71737fc20bc240e80524439b3823
 * Universal refactor of value `'p1'` to `'player'1` and `'p2'` to `'player2'`.
 * Refactor `function handleClick()` to remove spaghetti.  Now it launches a series of functions to process a player move and evaluate if endgame has been reached.
 * Moved images for `README.md` from `/images` directory to `/images/readme-images`.  Updated image filepaths in `README.md` accordingly.
 * Added `manifest.json` to store metadata and link in `<head>` of `index.html` file.
 * Created and added a favicon.
+
+#### v 1.1.5 | 31 May 2021 | commit TBD | Current Version
+* Fixed bug in CSS that allowed `<header>` and `<footer>` containers to overrun `<main>` container.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
