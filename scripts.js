@@ -1,5 +1,4 @@
-/******* STATE *******/
-
+/******* START: STATE *******/
 const gameState = {
     player1Turn: true,
     p1Boxes: [],
@@ -7,9 +6,10 @@ const gameState = {
     totalTurns: 0,
     winner: false
 }
+/******* START: STATE *******/
 
-/******* RENDER FUNCTIONS *******/
 
+/******* START: RENDER FUNCTIONS *******/
 function renderMain() {
     const docBody = document.getElementById('body');
     const bodyTemplate =   `<header>
@@ -39,9 +39,10 @@ function renderGameDivs() {
         gameBoard.insertAdjacentHTML('beforeend', gameBoxTemplate);
     }
 }
+/******* END: RENDER FUNCTIONS *******/
 
-/******* EVENT LISTENERS *******/
 
+/******* START: EVENT LISTENERS *******/
 function handleClick(event) {
     const clickedBox = event.currentTarget;
     const clickedBoxId = parseInt(clickedBox.getAttribute('id'));
@@ -51,8 +52,17 @@ function handleClick(event) {
     checkEndGame(currentPlayer);
 }
 
-/******* STRUCTURAL FUNCTION *******/
+function resetGame() {
+    gameState.player1Turn = true;
+    gameState.p1Boxes = [];
+    gameState.p2Boxes = [];
+    gameState.totalTurns = 0;
+    gameState.winner = false;
+    initialize();
+}
+/******* END: EVENT LISTENERS *******/
 
+/******* START: STRUCTURAL FUNCTIONS *******/
 function processTurn(player, clickedBox, clickedBoxId, outcomeBox) {
     gameState.totalTurns ++;
     clickedBox.onclick = null;
@@ -118,21 +128,14 @@ function declareStalemate() {
     document.getElementById('outcome').innerHTML = `<h2 class='outcome-text'>It's a stalemate!</h2>`;
     document.getElementById('game-board').setAttribute('style', 'pointer-events:none');
 }
+/******* END: STRUCTURAL FUNCTIONS *******/
 
-function resetGame() {
-    gameState.player1Turn = true;
-    gameState.p1Boxes = [];
-    gameState.p2Boxes = [];
-    gameState.totalTurns = 0;
-    gameState.winner = false;
-    initialize();
-}
 
-/******* INITIALIZE FUNCTION *******/
-
+/******* START: INITIALIZE FUNCTION *******/
 function initialize() {
     renderMain();
     renderGameDivs();
 }
+/******* END: INITIALIZE FUNCTION *******/
 
 initialize();
