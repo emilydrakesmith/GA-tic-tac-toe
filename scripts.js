@@ -55,13 +55,14 @@ function handleClick(event) {
 
 function processTurn(player, clickedBox, clickedBoxId, outcomeBox) {
     gameState.totalTurns += 1;
+    clickedBox.onclick = null;
     if (player === 'player1') processPlayerOneMove(clickedBox, clickedBoxId, outcomeBox);
     if (player === 'player2') processPlayerTwoMove(clickedBox, clickedBoxId, outcomeBox);
 }
 
 function processPlayerOneMove(box, boxId, resultsBox) {
     box.innerHTML = 'X';
-    box.className += ' p1-box';
+    box.classList.add('p1-box');
     gameState.p1Boxes.push(boxId);
     resultsBox.innerHTML = 'Player O Goes!';
     gameState.player1Turn = false;
@@ -69,7 +70,7 @@ function processPlayerOneMove(box, boxId, resultsBox) {
 
 function processPlayerTwoMove(box, boxId, resultsBox) {
     box.innerHTML = 'O';
-    box.className += ' p2-box';
+    box.classList.add('p2-box');
     gameState.p2Boxes.push(boxId);
     resultsBox.innerHTML = 'Player X Goes!';
     gameState.player1Turn = true;
@@ -98,14 +99,15 @@ function checkForWin(player) {
         if (playerBoxes.includes(winCondition[0])
             && playerBoxes.includes(winCondition[1])
             && playerBoxes.includes(winCondition[2])) {
-                declareWinner(player);
+                declareWinner(player, winCondition);
             }
     })
 }
 
-function declareWinner(player) {
+function declareWinner(player, winArray) {
     gameState.winner = true;
     const messageBox = document.getElementById('outcome');
+    winArray.forEach(boxId => document.getElementById(boxId).classList.add('win-background'));
     const p1WinOutput = `<h2 class='outcome-text'>X Wins!</h2>`;
     const p2WinOutput = `<h2 class='outcome-text'>O Wins!</h2>`;
     messageBox.innerHTML = (player === 'player1') ? p1WinOutput : p2WinOutput;

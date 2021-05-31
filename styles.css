@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     background-color: #343a40;
     font-family: sans-serif;
@@ -63,7 +63,7 @@ main {
 }
 
 #outcome {
-    margin: 30px;
+    margin: 15px 0 20px 0;
     border-radius: 10px;
     background-color: #ced4da;
     height: 100px;
@@ -113,8 +113,8 @@ h2 {
     background-color: orange;
 }
 
-.p1-box, .p2-box {
-    background-color: #ced4da !important;
+.win-background {
+    background-color: #ccff33 !important;
 }
 
 footer {

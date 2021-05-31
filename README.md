@@ -33,7 +33,7 @@ At any point during or after play, players may click the marked reset box to sta
 
 # Version Notes
 
-The version **1.1.4** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The version **1.1.6** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
 * Z: increases in this number represent changes that are relatively minor but still warrant a new commit
@@ -92,8 +92,14 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * Added `manifest.json` to store metadata and link in `<head>` of `index.html` file.
 * Created and added a favicon.
 
-#### v 1.1.5 | 31 May 2021 | commit TBD | Current Version
+#### v 1.1.5 | 31 May 2021 | commit 83d4a73c24d6fd0472b5b1cd5b98b6e3e0e19494
 * Fixed bug in CSS that allowed `<header>` and `<footer>` containers to overrun `<main>` container.
+
+#### v 1.1.6 | 31 May 2021 | commit TBD | Current Version
+* Winning square get a green background when the game is won.
+* Fixed bug that allowed a square to be clicked and claimed multiple times by different players.  Now once a square is clicked its event listener is removed.
+* Refactored code to add CSS classes to HTML elements via `element.classList.add()` rather than by string concatenation.
+* Removed a number of icebox features still listed in [Future Plans](#future-plans) section of this `README.md` file which have been implemented.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -124,8 +130,8 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 Manifest.json is a new technology, still experimental at the time of me writing this, and was developed per [MDN guidelines](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json).  This file isn't wholly necessary for the function of this app but is important for future-proofing and good practice.
 
 Here are some notes about this file:
-* The keys `"name"`, `"manifest-version"`, and `"version"` are mandatory.  All others are optional and included as I see them relevant tot his app.
-* The key `"manifest-version"` must always be set to `2`.
+* The keys `"name"`, `"manifest-version"`, and `"version"` are mandatory.  All others are optional and included as I see them relevant to his app.
+* The key `"manifest-version"` must always be set to `2` (datatype integer).  This is in the requirements as specified in MDN docs.  Presumably this is still an experimental feature and `2` is the value that prevents things from breaking.
 * The `"version"` key will be updated at any time I push a new version of this app.  All other keys will likely never change.
 * I'm unlikely to add more keys unless I develop this app to exist outside of a GitHub hosted site or more keys are published for use.
 * All keys must be entered as a string.
@@ -139,13 +145,9 @@ Here are some notes about this file:
 # Future Plans
 
 * *Important!* Before using CSS `:hover` to highlight squares which are available for selection I tried using event handlers `onmouseover` and on `mouseout`.  It was a nightmare.  *Do not* attempt to refactor in this way unless the refactor also involves implementing jQuery which handles these events more easily.
-* Fix bug that the `<header>` is superimposed over `<main>` in smaller browsers.
+* Figure out why favicon appear on my local machine but not on my GitHub-hosted site.
 * Refactor game squares and restart button as `<button>` elements.  This will improve accessibility.
-* Refactor the logic in `function checkWin()` to us a switch statement instead of the `if` tree.
 * Work on better separation of concerns in `scripts.js` file.
-* Add `<header>` and `<footer>` elements.
-* Render highlighting to show the winning cells on game win.
-* Create a 'reset game' button and functionality.
 * Create a tournament mode that tracks best-of-3/5/7 games.
 
 [Back to Top](#top)
