@@ -63,7 +63,6 @@ function processTurn(player, clickedBox, clickedBoxId, outcomeBox) {
 function processPlayerOneMove(box, boxId, resultsBox) {
     box.innerHTML = 'X';
     box.classList.replace('unclaimed-box', 'p1-box');
-    // box.classList.add('p1-box');
     gameState.p1Boxes.push(boxId);
     resultsBox.innerHTML = 'Player O Goes!';
     gameState.player1Turn = false;
@@ -71,7 +70,7 @@ function processPlayerOneMove(box, boxId, resultsBox) {
 
 function processPlayerTwoMove(box, boxId, resultsBox) {
     box.innerHTML = 'O';
-    box.classList.add('p2-box');
+    box.classList.replace('unclaimed-box', 'p2-box');
     gameState.p2Boxes.push(boxId);
     resultsBox.innerHTML = 'Player X Goes!';
     gameState.player1Turn = true;

@@ -33,7 +33,7 @@ At any point during or after play, players may click the marked reset box to sta
 
 # Version Notes
 
-The version **1.1.7** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The version **1.1.7.1** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
 * Z: increases in this number represent changes that are relatively minor but still warrant a new commit
@@ -101,8 +101,11 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * Refactored code to add CSS classes to HTML elements via `element.classList.add()` rather than by string concatenation.
 * Removed a number of icebox features still listed in [Future Plans](#future-plans) section of this `README.md` file which have been implemented.
 
-#### v 1.1.7 | 31 May 2021 | commit TBD | Current Version
+#### v 1.1.7 | 31 May 2021 | commit ed6402c22affc5f49f7c1bec3b2d52dbb51b5e2c
 * Changed CSS classes so that background color highlighting on mouse hover is only active for unclaimed boxes.  JavaScript now removes class `unclaimed` and replaces it with `p1-box` or `p2-box` on click.
+
+#### v 1.1.7.1 | 31 May 2021 | commit TBD | Current Version
+* Removed dead code inadvertently left commented-out.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
