@@ -106,10 +106,10 @@ h2 {
     width: 150px;
     height: 150px;
     border-radius: 10%;
-    background-color: #ced4da;
+    background-color: #CED4DA;
 }
 
-.game-box:hover {
+.unclaimed-box:hover {
     background-color: orange;
 }
 

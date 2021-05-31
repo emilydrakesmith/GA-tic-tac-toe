@@ -35,7 +35,7 @@ function renderMain() {
 function renderGameDivs() {
     const gameBoard = document.getElementById('game-board');
     for (let i=0; i<9; i++) {
-        const gameBoxTemplate = `<div class='game-box' id=${i+1} onclick='handleClick(event)'></div>`;
+        const gameBoxTemplate = `<div class='game-box unclaimed-box' id=${i+1} onclick='handleClick(event)'></div>`;
         gameBoard.insertAdjacentHTML('beforeend', gameBoxTemplate);
     }
 }
@@ -54,7 +54,7 @@ function handleClick(event) {
 /******* STRUCTURAL FUNCTION *******/
 
 function processTurn(player, clickedBox, clickedBoxId, outcomeBox) {
-    gameState.totalTurns += 1;
+    gameState.totalTurns ++;
     clickedBox.onclick = null;
     if (player === 'player1') processPlayerOneMove(clickedBox, clickedBoxId, outcomeBox);
     if (player === 'player2') processPlayerTwoMove(clickedBox, clickedBoxId, outcomeBox);
@@ -62,7 +62,8 @@ function processTurn(player, clickedBox, clickedBoxId, outcomeBox) {
 
 function processPlayerOneMove(box, boxId, resultsBox) {
     box.innerHTML = 'X';
-    box.classList.add('p1-box');
+    box.classList.replace('unclaimed-box', 'p1-box');
+    // box.classList.add('p1-box');
     gameState.p1Boxes.push(boxId);
     resultsBox.innerHTML = 'Player O Goes!';
     gameState.player1Turn = false;
