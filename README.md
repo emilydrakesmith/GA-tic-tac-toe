@@ -32,7 +32,7 @@ At any point during or after play, players may click the marked reset box to sta
 
 # Version Notes
 
-The version **1.1.1** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The version **1.1.3** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
 * Z: increases in this number represent changes that are relatively minor but still warrant a new commit
@@ -73,9 +73,16 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 #### v 1.1.1 | 28 May 2021 | commit 929fc50d1b4bce263b497d84c4710156bc7b7ba8
 * Fixed a hyperlink in `<footer>` which previously redirected to the wrong GitHub repository.
 
-#### v 1.1.1 | 30 May 2021 | commit TBD | Current Version
+#### v 1.1.2 | 30 May 2021 | commit 47ab61b9c687a6a0cc12f8390b25ae86a41f7609
 * Fixed a bug where the game remains interactable after declaring a winner.
 * Refactored `function renderGame()` and `function renderGameDivs()` to de-spaghettify.
+
+#### v 1.1.3 | 30 May 2021 | commit TBD | Current Version
+* Fixed versioning error in `README.med` on previous commit.
+* Renamed `function checkWin()` to to `function checkEndGame()`.
+* Refactored `function checkEndGame()` to use `.forEach` HOF instead of for-loops.
+* Refactored `function checkEndGame()` and `function checkForWinner()` to remove `if/else` trees.  Now the function can be called on either player in its native state.  Previously half the code wouldn't run.
+* Refactored argument `color` as `player` in `function declareWinner()`;
 
 [Back to Top](#top)
 <a id='tech-framework'></a>

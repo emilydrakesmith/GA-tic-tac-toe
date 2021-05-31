@@ -47,11 +47,13 @@ function handleClick(event) {
     const clickedBox = event.currentTarget;
     const clickedBoxClasses = clickedBox.getAttribute('class');
     const clickedBoxId = parseInt(clickedBox.getAttribute('id'));
+    let playerToCheck = '';
     if (gameState.player1Turn === true) {
         if (clickedBoxClasses === 'game-box') {
             gameState.p1Boxes.push(clickedBoxId);
             clickedBox.className += ' p1-box';
             clickedBox.innerHTML = 'X';
+            playerToCheck = 'p1';
             document.getElementById('outcome').innerHTML = 'Player O Goes!';
             gameState.player1Turn = false;
         }
@@ -60,16 +62,22 @@ function handleClick(event) {
             gameState.p2Boxes.push(clickedBoxId);
             clickedBox.className += ' p2-box';
             clickedBox.innerHTML = 'O';
+            playerToCheck = 'p2';
             document.getElementById('outcome').innerHTML = 'Player X Goes!';
             gameState.player1Turn = true;
         }
     }
-    checkWin();
+    checkEndGame(playerToCheck);
 }
 
 /******* STRUCTURAL FUNCTION *******/
 
-function checkWin() {
+function checkEndGame(currentPlayer) {
+    if (gameState.totalTurns >= 5) checkForWin(currentPlayer);
+    if (gameState.totalTurns === 9 && gameState.winner === false) declareStalemate();
+}
+
+function checkForWin(player) {
     const winConditions = [
         [1, 2, 3],
         [4, 5, 6],
@@ -80,38 +88,24 @@ function checkWin() {
         [1, 5, 9],
         [3, 5, 7]
     ];
-
-    if (gameState.player1Turn === false) {
-        for (let i=0; i<winConditions.length; i++) {
-                if (gameState.p1Boxes.length >= 3
-                    && gameState.p1Boxes.includes(winConditions[i][0])
-                    && gameState.p1Boxes.includes(winConditions[i][1])
-                    && gameState.p1Boxes.includes(winConditions[i][2])) {
-                        declareWinner('p1');
-                }
+    
+    const playerBoxes = player === 'p1' ? gameState.p1Boxes : gameState.p2Boxes;
+    
+    winConditions.forEach(winCondition => {
+        if (playerBoxes.includes(winCondition[0])
+            && playerBoxes.includes(winCondition[1])
+            && playerBoxes.includes(winCondition[2])) {
+                declareWinner(player);
             }
-    } else if (gameState.player1Turn === true) {
-        for (let i=0; i<winConditions.length; i++) {
-                if (gameState.p2Boxes.length >= 3
-                    && gameState.p2Boxes.includes(winConditions[i][0])
-                    && gameState.p2Boxes.includes(winConditions[i][1])
-                    && gameState.p2Boxes.includes(winConditions[i][2])) {
-                        declareWinner('p2');
-                }
-            }
-        }
-
-    if (gameState.totalTurns === 9 && gameState.winner === false) {
-        declareStalemate();
-    }
+    })
 }
 
-function declareWinner(color) {
+function declareWinner(player) {
     gameState.winner = true;
     const messageBox = document.getElementById('outcome');
     const p1WinOutput = `<h2 class='outcome-text'>X Wins!</h2>`;
     const p2WinOutput = `<h2 class='outcome-text'>O Wins!</h2>`;
-    messageBox.innerHTML = (color === 'p1') ? p1WinOutput : p2WinOutput;
+    messageBox.innerHTML = (player === 'p1') ? p1WinOutput : p2WinOutput;
     document.getElementById('game-board').setAttribute('style', 'pointer-events:none');
 }
 
