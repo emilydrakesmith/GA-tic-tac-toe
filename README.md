@@ -33,7 +33,7 @@ At any point during or after play, players may click the marked reset box to sta
 
 # Version Notes
 
-The version **1.1.7.2** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The version **1.1.7.3** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
 * Z: increases in this number represent changes that are relatively minor but still warrant a new commit
@@ -107,9 +107,12 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 #### v 1.1.7.1 | 31 May 2021 | commit 801b97827fec45196e5965f269b3d21d8ce6d1fe
 * Removed dead code inadvertently left commented-out.
 
-#### v 1.1.7.2 | 31 May 2021 | commit TBD | Current Version
+#### v 1.1.7.2 | 31 May 2021 | commit f5fd43bcde768708b12d39f7bb7b20306b7a6819
 * Relocate `function resetGame()` from *Structural Functions* to *Event Listeners* section of code.
 * Add comments to `scripts.js` file to better show code organization.
+
+#### 1.1.7.3 | 01 June 2021 | commit TBD | Current Version
+* Updated `README.md` screenshot for game victory with new highlighting on winning squares.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>

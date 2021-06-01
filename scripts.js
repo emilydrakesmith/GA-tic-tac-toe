@@ -18,11 +18,9 @@ function renderMain() {
                             <main id='main'>
                                 <section id='game-board'></section>
                                 <section id='outcome'>Player X Goes First!<br>Click a square!</section>
-                                <section id='restart-box' onclick='resetGame()'>
-                                    <h2>Click to Restart</h2>
-                                </section>
+                                <section id='restart-box' onclick='resetGame()'><h2>Click to Restart</h2></section>
                             </main>
-                            <footer id='footer'>
+                            <footer>
                                 <div>© Marty Smith 2021</div>
                                 <div>
                                     <a href='https://github.com/mhsmith321/GA-tic-tac-toe' target='_blank' class='footer-link'>GitHub Repo</a>  •
@@ -61,6 +59,7 @@ function resetGame() {
     initialize();
 }
 /******* END: EVENT LISTENERS *******/
+
 
 /******* START: STRUCTURAL FUNCTIONS *******/
 function processTurn(player, clickedBox, clickedBoxId, outcomeBox) {
