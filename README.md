@@ -33,7 +33,7 @@ At any point during or after play, players may click the marked reset box to sta
 
 # Version Notes
 
-The version **1.1.7.3** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The version **1.1.7.4** of this app is currently uploaded and live.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
 * Z: increases in this number represent changes that are relatively minor but still warrant a new commit
@@ -111,8 +111,13 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * Relocate `function resetGame()` from *Structural Functions* to *Event Listeners* section of code.
 * Add comments to `scripts.js` file to better show code organization.
 
-#### 1.1.7.3 | 01 June 2021 | commit TBD | Current Version
+#### v 1.1.7.3 | 01 June 2021 | commit 6358aaed119a2caccda8a596a792f16f3bd2fdc7
 * Updated `README.md` screenshot for game victory with new highlighting on winning squares.
+* Fixed a bug causing `manifest.json` and favicon to not load on the deployed app.
+
+#### 1.1.7.4 | 30 June 2021 | commit TBD | Current Version
+* Fixed typos in filepaths linking images in this `README.md` file.
+
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -313,9 +318,9 @@ Using a numbered outline is not required but helps organize the more complex ste
 ![Tic Tac Toe as it appears on initialization](images/readme-images/game-initialized.png)
 
 ### Game on Player Win
-![Tic Tac Toe when a player has won](images/readme-images//game-win.png)
+![Tic Tac Toe when a player has won](images/readme-images/game-win.png)
 
 ### Game on Stalemate
-![Tic Tac Toe on a stalemate](images/readme-images//game-stalemate.png)
+![Tic Tac Toe on a stalemate](images/readme-images/game-stalemate.png)
 
 [Back to Top](#top)
