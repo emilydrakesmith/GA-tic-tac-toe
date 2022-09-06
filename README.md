@@ -179,7 +179,7 @@ Although I'm always interested in meeting new collaborators I prefer to keep thi
 
 I'm happy to let anyone reuse my code so long as you contact me for advance permission and give attribution where appropriate.  Some materials are specified in this README as proprietary material from General Assembly and should only be used with the direct permission of General Assembly.
 
-If you'd like to learn more about the developer, please visit [my website](https://martysmith.tech/) and [my GitHub](https://github.com/mhsmith321).
+If you'd like to learn more about the developer, please visit [my website](https://emilysmith.tech/) and [my GitHub](https://github.com/mhsmith321).
 
 [Back to Top](#top)
 <a id='special-thanks'></a>
