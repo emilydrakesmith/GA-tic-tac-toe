@@ -21,10 +21,10 @@ function renderMain() {
                                 <section id='restart-box' onclick='resetGame()'><h2>Click to Restart</h2></section>
                             </main>
                             <footer>
-                                <div>© Marty Smith 2021</div>
+                                <div>© Emily 2021</div>
                                 <div>
                                     <a href='https://github.com/mhsmith321/GA-tic-tac-toe' target='_blank' class='footer-link'>GitHub Repo</a>  •
-                                    <a href='https://martysmith.tech/' target='_blank' class='footer-link'>Developer Webpage</a>
+                                    <a href='https://emilysmith.tech/' target='_blank' class='footer-link'>Developer Webpage</a>
                                 </div>
                             </footer>`;
     docBody.innerHTML = bodyTemplate;

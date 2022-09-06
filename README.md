@@ -115,9 +115,11 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * Updated `README.md` screenshot for game victory with new highlighting on winning squares.
 * Fixed a bug causing `manifest.json` and favicon to not load on the deployed app.
 
-#### 1.1.7.4 | 30 June 2021 | commit TBD | Current Version
+#### 1.1.7.4 | 30 June 2021 | commit f87c5974d07dfb6b2faeecca431d87b714d1a490
 * Fixed typos in filepaths linking images in this `README.md` file.
 
+#### [VERSION] | [DATE] | commit -- | Current Version
+*Important!*  When numbering this version, update values at both the top of this file AND in manifest.json
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
