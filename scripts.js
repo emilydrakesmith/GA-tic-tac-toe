@@ -23,7 +23,7 @@ function renderMain() {
                             <footer>
                                 <div>© Emily Smith 2021</div>
                                 <div>
-                                    <a href='https://github.com/mhsmith321/GA-tic-tac-toe' target='_blank' class='footer-link'>GitHub Repo</a>  •
+                                    <a href='https://github.com/emilydrakesmith/GA-tic-tac-toe' target='_blank' class='footer-link'>GitHub Repo</a>  •
                                     <a href='https://emilysmith.tech/' target='_blank' class='footer-link'>Developer Webpage</a>
                                 </div>
                             </footer>`;
