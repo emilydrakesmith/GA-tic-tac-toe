@@ -2,7 +2,7 @@
 
 # Introduction
 
-This app is an example of the classic game Tic-Tac-Toe, created as a deliverable for the Software Engineering Immersive program with General Assembly.  Click [here](https://mhsmith321.github.io/GA-tic-tac-toe/) to play right now!
+This app is an example of the classic game Tic-Tac-Toe, created as a deliverable for the Software Engineering Immersive program with General Assembly.  Click [here](https://emilydrakesmith.github.io/GA-tic-tac-toe/) to play right now!
 
 # Table of Contents
 
@@ -139,8 +139,8 @@ Versions prior to 1.0.0 are pre-deployment and will have varying levels of funct
 * macOS Big Sur version 11.2.1, Apple M1 chip
 
 **This app is hosted at:**
-* [GitHub Repo](https://github.com/mhsmith321/GA-tic-tac-toe)
-* [GitHub Hosted Site](https://mhsmith321.github.io/GA-tic-tac-toe/)
+* [GitHub Repo](https://github.com/emilydrakesmith/GA-tic-tac-toe)
+* [GitHub Hosted Site](https://emilydrakesmith.github.io/GA-tic-tac-toe/)
 
 [Back to Top](#top)
 <a id='manifest'></a>
@@ -179,7 +179,7 @@ Although I'm always interested in meeting new collaborators I prefer to keep thi
 
 I'm happy to let anyone reuse my code so long as you contact me for advance permission and give attribution where appropriate.  Some materials are specified in this README as proprietary material from General Assembly and should only be used with the direct permission of General Assembly.
 
-If you'd like to learn more about the developer, please visit [my website](https://emilysmith.tech/) and [my GitHub](https://github.com/mhsmith321).
+If you'd like to learn more about the developer, please visit [my website](https://emilysmith.tech/) and [my GitHub](https://github.com/emilydrakesmith).
 
 [Back to Top](#top)
 <a id='special-thanks'></a>
